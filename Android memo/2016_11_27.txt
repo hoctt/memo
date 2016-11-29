@@ -1,2 +1,38 @@
 2016-11-27
 
+Parse data from web page
+
+Dùng thư viện Jsoup để lấy data từ web.
+
+1. Chú ý: Do connect đến web nên >5s --> bị not responding.
+--> Cần dùng 1 thread mới để connect đến internet
+
+Tạo một class mới extend từ asyn task để thực hiện connect, tương tự cho connect đến database người ta vẫn hay dùng asynTask.
+Về nhà thử ví dụ: download file using asynTask android
+Xử lý data được thực thi bên trong class mới này.
+
+2. Đối với 3 tham số parameter của AsyncTask (Params, Progress, Result)
+- Para 1- Params: Tham số đầu vào của hàm doInBackground(). Người ta thường truyền tên database hoặc url của trang web vào tham số này.
+- Para 2- Progress: Giá trị public làm tham số đầu vào của onProgressUpdate(). Hoặc ở hàm doInBackground() có thể publish một object của tham số này. Thông thường cần hiện cái gì lên UI thì publish cái đó và cho hiện lên ở hàm này.
+- Para 3- Result: Là giá trị trả về của hàm doInBackground và là giá trị đầu vào của hàm onPostExecute. Thường người ra return kết quả ở hàm doInBackground và xử lý cái kết quả ấy trong cái hàm onPostExecute này.
+
+--> Mình đang hơi consider cách làm thế nào để lấy ra ngoài Main Activity (lưu vào một structure nào đấy)
+3. Một số kinh nghiệm khi parse data từ url:
+- Nếu thẻ được define bằng class --> lấy item bằng cách select("tag_name.class_name"). Ex: select("div.view-category-item"), select("h3.view-category-item-title")
+	Element masthead = doc.select("div.masthead").first();
+  // div with class=masthead
+
+- Nếu tag có id thì có thể tìm thông qua hàm findbyID, hoặc có thể lấy ra một mảng theo hàm findByTagName
+	Element content = doc.getElementById("content");
+	Elements links = content.getElementsByTag("a");
+
+- Nếu muốn lấy theo tuần tự thẻ con trong thẻ cha: select("parent_tag > child_tag > child_child_tag")
+	Elements resultLinks = doc.select("h3.r > a"); // direct a after h3
+
+- Lấy hyper link của image:
+	Elements links = doc.select("a[href]"); // a with href
+	Elements pngs = doc.select("img[src$=.png]"); // Chú ý image extension
+	
+- Lấy text và hyper link của text:
+	String linkHref = link.attr("href");
+	String linkText = link.text();
