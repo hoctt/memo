@@ -33,3 +33,10 @@ Bình thường khi làm việc người ta sẽ commit lên local (branch_name)
 Và đến khi hoàn thành xong chỉnh sửa, fix bugs... --> push lên remote branch (remote/branch_name)
 Để đồng bộ từ một branch ở remote về local --> Dùng pull
 Để load một branch từ remote và thay thể cho ở local --> fetch
+
+Cách sử dụng git repository trên github:
+1. Tạo một repository mới ở trên github
+2. Checkout (Clone) về máy local
+3. Add folders, file và commit
+4. Push lên remote branch
+5. Cứ thế làm việc tiếp cho các lần sau.
