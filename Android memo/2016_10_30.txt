@@ -1,0 +1,35 @@
+2016-10-30
+
+MỘT SỐ CHÚ Ý:
+- Phải luôn tập trung vào cải thiện giao diện --> Điểm đầu tiên lôi kéo người dùng
+- Cố gắng lên nhé con trai
+
+Cách bắt đầu một app:
+- Tổng hợp các app hiện có từ store
+- Làm bảng thống kế các chức năng, ưu nhược điểm của các app hiện có
+- Liệt kê các chức năng, các tính năng mà app mình sẽ phải làm
+- Phấn đấu, cố gắng hết sức làm tốt hết sức mình có thể
+- 
+
+SQLITE: Database for Android
+- Sử dụng sqlite để view và check sql query
+- Tạo class DbHelper để hỗ trợ các tương tác với db
+- Luôn chú ý đóng db sau khi kết thúc app (override hàm onDestroy)
+- Đóng ADM (Android Device Manager) trước lúc chạy app
+- 
+Thông thường khi làm việc với SQLITE:
+Class MyDbHelper: Cung cấp các method khởi tạo database, tạo bảng.
+DbAdapter: Tạo thêm một class này chuyên thực hiện các thao tác vào ra với data. (Add item, get item ...)
+
+
+BTVN:
+- Hoàn thành chương trình quản lý sinh viên
+	+ Function modify
+	+ Sử dụng Radio button group
+	+ Kết hợp sử dụng database (SQLITE)
+	+ Input data --> save database --> Lần sau load lại
+	+ Không select item nào mà chọn modify + delete
+- Tự tìm hiều về grid view (cách làm giống hệt ListView)
+	+ Đánh số từ trái qua phải, trên xuống dưới
+	+ 
+- Tìm hiểu về một số định dạng xml, json và ứng dụng trong Android.

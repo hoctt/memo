@@ -1,0 +1,40 @@
+TỔNG HƠP CÁC APP IDEA:
+
+1. Xây dựng ứng dụng xử lý ảnh Emoji Face
+2. Ứng dụng micro phone to speaker
+3. Xây dựng ứng dụng đọc truyện ngôn tình (https://sstruyen.com)
+
+1. Phần mềm hỗ trợ tìm nhà trọ	
+App lưu trữ vị trí các khu nhà trọ , số lượng phòng , giá phòng và số điện thoại của chủ phòng trọ
+Có thể cập nhật thông tin phòng trọ do người dùng post lên ở mọi nơi khi kết nối internet
+Có thể định vị bằng gps và thống hê các nhà trọ gần vị trí của người dùng
+
+Mục tiêu: tạo ra app bản đồ phòng trọ giúp người dùng dễ dàng tìm kiếm được các phòng trọ phù hợp mà mất ít chi phí và thời gian tìm kiếm
+Chức năng:
+Hiển thị vị trí các phòng trọ trên bản đồ và thông tin các phòng trọ đó
+Thêm , sửa , xóa được các phòng trọ đó khi người dùng có thể kết nối internet
+Liệt kê vị trí các phòng trọ xung quanh vị trí của người dùng
+
+Chức năng mở rộng: kết nối tài khoản với các mạng xã hội, Facebook, Google+ hoặc có thể đăng kí tk thông qua sđt
+2. Xây dựng ứng dụng xe đi chung
+
+Kết nối tài khoản với các mạng xã hội Facebook, Google +…
+Đăng tải và quản lý hành trình di chuyển
+Tìm kiếm, lựa chọn hành trình phù hợp
+Chấm điểm hành trình, đánh giá chủ xe
+Tự động đưa ra gợi về quãng đường, cước phí…
+
+3. Phần mềm quản lý bán hàng trên mobile
+Quản lý/xử lý đơn hàng người dùng đã đăng ký.
+Giám sát hàng hết, hàng tồn.
+Kiểm tra phản hồi của khách hàng trên website thông qua mobile và trả lời phản hồi đó!
+Nhắc nhở đơn hàng mới, bình luận mới (có cấu hình bật tắt)
+Một số chức năng đơn giản khác…
+Khai báo kết nối với website
+
+Chức năng chính của việc bổ sung kết nối với website:
+Viết chức năng khởi tạo và quản lý kết nối với mobile.
+
+Chức năng nâng cao của phần mềm:
+Quản lý nhiều website khác nhau.
+

@@ -1,0 +1,27 @@
+2016-11-24
+
+1. Lấy apk file từ app:
+appk Extractor
+apkpure.com
+
+2. Dùng các tool sau để lấy code:
+apktool
+dex2jar
+jd-gui-1.4.0.jar
+
+3. Khi muốn lấy ảnh, icon từ một app thì chỉ cần dùng 7zip giải nén file apk và có thể lấy dc ảnh.
+(Trong folder ảnh thì ngoài ảnh của app còn có các icon của hệ thống được tự động copy vào app)
+
+4. Để lấy đc xml file thì có thể dùng apktool --> decode được file xml. (Bao gồm cả manifest)
+
+5. Nguyên tắc lấy file java: Lấy file class.dex --> convert sang jar --> dùng tool để view jar file.
+
+6.Cách lấy data từ các trang web về:
+6.1) Cách lấy link mà app dùng để load data về
+- Cài app
+- Cài thêm app package capture
+--> bắt được gói tin và xem đc nguồn data của nó.
+
+Hoặc có thể sử dụng phần mềm Charles để bắt từ máy tính.
+
+

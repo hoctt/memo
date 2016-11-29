@@ -1,0 +1,12 @@
+2016-10-16: OOP ListView
+
+TODO:
+- Xây dựng giao diện 1 hàng: STT, Name, Status (vắng mặt, có mặt), checkbook, edit.
+- Hoàn thành chương trình quản lý sinh viên bằng ListView
+- Comple app nghe nhạc (chơi nhạc từ một nguồn có sẵn)
+
+
+---> Sau khi hoàn thành list quản lý sinh viên mình có thể viết được app TODO ITEMS
+
+
+

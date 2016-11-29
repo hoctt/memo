@@ -1,0 +1,45 @@
+2016-11-03: SQLITE
+
+1, Đối với thao tác với CSDL trong SQLITE, ta có thể 2 cách:
+- Sử dụng câu lệnh của SQL
+	+ Viết câu lệnh
+	+ Gọi hàm db.execSQL(query)
+	--> Phương pháp này có thể lồng nhiều câu lệnh với nhau (thông qua kế hợp câu lệnh SQL)
+	Chú ý phân biệt:
+	execSQL: Thực hiện câu lệnh sql, thường ko có dữ liệu trả về.
+	rawQuery: Thực hiện câu lệnh query đầy đủ (có câu lệnh sql hoàn chỉnh). Thường có data trả về (được lưu trong cursor của android)
+	query: Cũng như rawQuery nhưng hỗ trợ người dùng không cần viết câu lệnh sql hoàn chỉnh, 
+	chỉ cần truyền vào các tham số và nó sẽ tự build lên sql query cho mình.
+	
+	
+- Sử dụng phương thức của adroid.
+	+ db.insert, db.delete, db.update
+
+Tron TH cần truyền vào nhiều tham số để làm điều kiện của SQL query thì người dùng có thể dùng dấu ? để thay cho các điều kiện, 
+và sau đó các điều kiện được truyền vào thông qua new String[]{String.valueOf(student.getMssv()) --> thay lần lượt cho các dấu ?
+
+
+2, Sử dụng thi viện ngoài để import existing database
+SQLiteAssetHelper: Cung cấp các API để sử dụng db có sẵn. (Copy từ asset folder --> app db của máy, load lên và sử dụng bình thường)
+- Cách cài đặt và sử dụng:
++ Import vào file grade.build
++ Tạo class kế thừa từ SQLiteAssetHelper class
++ Khai báo và sử dụng như class của SQLiteOpenHelper đã được học.
+
+
+BTVN:
+1.- Đọc dữ liệu từ media store android --> load tất cả các bài hát, đưa lên listview, 
+( Tham khảo database media store android - database chứa tất cả các bài hát được đưa vào trong thiết bị android)
++ Hiển thị list các bài hát bằng ListView
++ Click vào một bài hát --> Mở ứng dụng media player và phát bài hát đó.
+
+Cách làm:
+1. Check hàm parseAllAudio (refer src) --> Xem có list được các bài hát từ trong máy và hiển thị ở ListView (lưu ở một class Audio)
+2. Xử lí click vào một bài hát thì enable cái audio player lên.
+3. Hoặc có thể từ media player --> Button show all audio --> chọn 1 và play
+
+- Create Audio Adapter
+- Read từ database --> ListView
+- Notify to Adapter
+
+2. Nếu có thời gian thì nên hoàn thành thêm TODO APP

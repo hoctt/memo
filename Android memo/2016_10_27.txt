@@ -1,0 +1,35 @@
+LISTVIEW
+
+Muốn hiển thị List data lên ListView:
+- Define layout cho 1 row (row.xml)
+- Define Ojbect cho từng row (Student class)
+- Create apdater và ghi đè method getView
+
+Một số thuộc tính support listView
+- fastScrollEnable = true -> Support scroll nhanh
+- divider: Tao ngan cach giua cac row
+- hide fab when scroll
+
+TIP:
+- Nên sử dụng ViewHodlder để cất giữ 1 item view --> Tăng hiệu suất, ko cần tạo lại item mới khi scroll.
+
+Bản chất của ViewHodlder:
+- Khi app khởi động --> Tạo ra số lượng Hodlder chính bằng số row hiển thị trên màn hình đầu
+- Khi scroll để view các row khác thì nó sẽ tái sử dụng Hodlder đã có sẵn và cứ như thế.
+
+Phân biệt 
+
+BTVN:
+- Tìm hiểu apdater, notifyDataSetChange
+- Hoàn thành app quản lý sinh viên
+- Tìm hiểu một số thư viện để load ảnh: Universal Image Loader, 
+
+--> Enhancement:
+- Dùng radio group cho việc lựa chọn giới tính
+- 
+Tìm hiểu sử dụng một số step sau:
+1, sqlite: select, delete, update, insert
+2, firebase (db realtime)
+3, Xây dựng khung project
+4, Unlock app, capture request, parse data html
+

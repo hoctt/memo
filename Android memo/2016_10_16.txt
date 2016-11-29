@@ -1,0 +1,36 @@
+2016-10-16: Frame Layout and Table Layout
+Sắp xếp theo hiệu suất giảm dần:
+- FrameLayout (tốc độ xử lý cao nhất)
+- RelativeLayout
+- LinearLayout
+- TableLayout
+
+2 Layout sau có hiệu suất thấp hơn nhưng hay được sử dụng nhất
+- GridLayout
+- ListLayout
+
+Chú ý về căn lề:
+margin: Căn chỉnh tương đối so với các view bên cạnh nó (nếu có) hoặc nếu ko có thì tương đối so với layout cha của nó
+padding: Căn chỉnh tương đối của nội dung so với chính view đấy
+
+1, FrameLayout
+- Tạo ra mặc định nằm ở góc trên bên trái
+- Layout sau sẽ đè lên layout trước
+- Không có các phương thức căn chỉnh các thuộc tính con trong layout
+- Do có hiệu suất cao hơn nên nên dùng FrameLayout khi có thể:
+	+ Có các giao diện đè lên nhau
+	+ Khi gặp một bài toán nên suy nghĩ dùng các layout thế nào để đạt hiệu suất cao nhất (theo thứ tự như trên)
+
+2, TableLayout: Dùng khi muốn phân chia view đồng đều ra thành nhiêù ô nhỏ
+- Bao gồm các TableRow, mỗi TableRow thực chất là một LinearLayout theo chiều ngang
+- Có thể căn chỉnh các item trong mỗi Table giống như trong LinerLayout
+- Thuộc tính stretchColumns cho phép kéo dài một cột (Nhập vào chỉ số cột, nhập * thì căn đều tất cả các cột)
+- Thuộc tính shrinkColumns thì tự điều chỉnh các view cho phù hợp với các loại màn hình
+- Đối với TableLayout thì android phải tự tính ra các item con trong nó và chia ra cho phù hợp, chính lý do này làm cho hiệu suất của 
+TableLayout thấp hơn các layout còn lại (Đối với TH dùng * để tự chia, nếu dùng weight thì hiệu suất xấp xỉ LinearLayout)
+
+CHỮA BTVN:
+Cách tiếp xúc với một số bài toán (như media player)
+- Tìm hiểu về lifecycle của app (google) --> Hiểu được muốn chạy đc app thì cần phải qua các bước như thế nào.
+- Ví dụ như trong TH này là : Idle --> Initialized --> Prepared --> Started 
+

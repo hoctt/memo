@@ -1,0 +1,38 @@
+2016-11-17
+
+1. Về việc điều chuyển giữa các fragment thì người ta thường hay tạo riêng một class (Controller) để chuyên điều khiển chuyển hướng.
+Các hàm điều hướng có thể viết dưới dạng static.
+Để đến khi được gọi từ các class khác chỉ cần gọi tên class.tên function (không cần khởi tạo object)
+
+2. Viết một hàm chung để chuyển đến fragment (một hàm add to backstack và một hàm không add to backstack)
+--> Từ các class chỉ cần gọi đến hàm chuyển hướng là chuyển fragment được.
+
+3. Về việc add animation khi chuyển đổi giữa các fragment.
+Từ fragmentTransision thì gọi hàm .setCustomAnimation và truyền vào 4 hướng animation --> OK.
+Các file animation có thể được tìm thấy trên mạng.
+Chú ý: Phải setCustomAnimation trước hàm replace và commit thì mới nhìn thấy animation trước khi chuyển màn hình.
+
+4. Chú ý về hiệu suất: Khi chuyển đi chuyển lại giữa các màn hình thì mất thời gian load data --> tránh phải load nhiều lần
+Làm sao để khi từ 1->2 mà ta đã load ở màn hình một rồi thì từ 2->1 thì ta không cần thời gian load data lại nữa.
+
+--> Solution: Tạo ra một BaseFragment: có tác dụng lưu lại trạng thái của một fragment đã được khởi tạo --> show lên (không mất thời gian load.)
+Mỗi lúc có request hiển thị màn hình thì methdo onCreateView sẽ được gọi.
+--> Thực chất là tạo la lớp BaseFragment là để override function onCreateView. Hàm override này sẽ trả lại cái containerView được đã tạo ra ở onCreate.
+Và fragment class của chúng ta sẽ kế thừa từ lớp BaseFragment chứ không phải kế thừa từ class Fragment nữa.
+Trong hàm onCreate của fragment class của chúng ta sẽ check nếu 
+- containerView == null --> khởi tạo giống như trong onCreateView ngày xưa
+- Nếu khác null thì không cần làm gì cả. Vì đã có và ko cần load lại data.
+
+
+5. Tiếp theo là bài toán về Destroy và Back lại: Trong trường hợp các xử lý cần nhiều thời gian và chưa xử lý xong nhưng mà user đã chọn back hoặc Destroy
+thì nếu cái hành động trên lặp đi lặp lại nhiều lần thì app sẽ chết --> Cần override hàm onDestroy để xử lý việc này
+Solution: Truy cập đến view chứa nó và hủy luôn. (RemoveAllView)
+
+6. Nên customize lại hàm hiển thị các button trên actionBar để hiện thị cho đẹp (các màn hình sau có nút back để quay về màn hình trước)
+
+7. Kinh nghiệm đọc code:
+- Đi từ manifest --> tìm Activity được khởi động từ đầu
+( Thường một app thông thường sẽ có 2 activity (1 cái log in/ nhạc nền + 1 activity main chứa tất cả các xử lý)
+- Vào Main Activity
+	+ Check layout
+	+ Check tương ứng các event trong main layout.

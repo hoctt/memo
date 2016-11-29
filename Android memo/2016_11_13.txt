@@ -1,0 +1,33 @@
+----------------------------------------------------------------------------------------------
+APP IDEA:
+
+1. Sử dụng mic của điện thoại để hát karaoke (Phát qua loa blutooth)
+2. Chụp ảnh mặt và hiển thị các trạng thái, biểu cảm khác nhau của khuôn mặt (buồn, vui ...)
+3. Hỗ trợ ôn luyện lý thuyết thi bằng lái xe B1,2 + làm đề.
+4. 
+
+--> Cố lên nào con trai, cố gắng hơn nữa, 
+
+----------------------------------------------------------------------------------------------
+2016-11-13: Sử dụng thư viện navigation drawer
+
+Một số chú ý khi làm việc:
+1. Nên phân chia resource vào thành các package nhỏ (adapter, fragment, acitivity, common ) theo một số quy tắc nhất định
+- Dễ dàng trang quản lý project, tracking code
+
+SỬ DỤNG THƯ VIỆN NAVIGATION DRAWER
+1. Download về và build lên
+2. Chỉnh màu chủ đạo (nên tuân theo color spec của google)
+https://material.google.com/style/color.html#color-color-palette
+3. Điều chỉnh các thông tin, menu
+- Refer trang chủ và làm theo các bước
+- Chú ý : Fragment vs Fragment v4 (suppport các phiên bản android cũ) dùng tương ứng với getFragmentManager và getSupportFragmentManager
+
+4. Chú ý về sử dụng thư viện:
+- Chỉnh sửa top bar để phù hợp với từng view.
+- Lưu trữ cache màn hình đầu, khi back lại thì chỉ cần hiển thị ra, ko cần khởi tạo getView lại
+
+
+BTVN:
+1. Hoàn thiện app nghe nhạc, thêm phần bài hát yêu thích
+2. Nhúng app nghe nhạc vào navigation drawer template.

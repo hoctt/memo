@@ -1,0 +1,74 @@
+WIFI: TPLINK/Khanhduy1	
+
+Comment/Uncomment in Android studio: Ctrl + /
+Home --> Pause, Stop
+Mo lai app --> Start, Resume
+
+1, Cấu trúc folder của một project trong adroid:
+- Manifest: Chứa thông tin cấu hình của một project. Nó là một file duy nhất trong folder này.
+- Java: Chứa các file source code java của một ứng dụng. (Chứa các file xử lý logic)
+- Res: Folder chứa các file resource. (layout, ảnh hiện thị, các button)
+
+2, Vòng đời của một Android Activity:
+- Create --> Start ---> Resume : Visible to user
+- Pause --> Stop --> Start --> Resume
+
+3, 
+Khi build một giao diện nhiều activity và không build được do lỗi xml thì add dòng sau vào:
+xmlns:app="http://schemas.android.com/apk/res-auto"
+
+4, Các xử lý liên quan đến activity và widget:
+
+- Khi muon thao tac voi mot widget tren man hinh thi phai lay widget day ra bang cau lenh nay
+Button button1 = (Button) this.findViewById(R.id.button1);//Widget kiểu gì thì mình phải khai báo kiểu đấy (botton, textView..)
+
+TRUYỀN INTENT SANG ACTIVITY KHÁC
+- Xử lý sự kiện click: button1.setOnClickListener(new Button.OnClickListener() {
+- Truyền một intent sang activity khác: Intent myIntent = new Intent(MainActivity.this, Example1Activity.class);
+- Pass argument sang next activity thông quan intent: myIntent.putExtra("text1", "This is text from main activity");
+
+XỬ LÝ NHẬN INTENT:
+- Intent intent = getIntent();//Get intent from last activity
+- 
+
+GET DATA FROM GOOGPLAY:
+- Lấy id của app. (copy từ URL)
+- Vào trang apk pure
+- Download package và sử dụng
+
+HOMEWORK 1: Viết chương trình calculator
+
+USE NETWORK RESOURCE:
+Khi bị Error handling liên quan đến internet connection --> add 2 dòng sau:
+
+StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+StrictMode.setThreadPolicy(policy);
+		
+HOMEWORK 2: Viết chương trình chỉnh sửa ảnh:
+- Load 1 bức ảnh
+- Chỉnh sửa một số thông số ảnh: ánh sáng, độ tương phản, âm bản
+- Flip ảnh
+
+
+Các bước xử lý ảnh:
+- Chuyển đổi ra bitmap
+- Lấy vị trí ở mỗi bitmap --> tính ra các thông số của bitmap ấy (R,G,B)
+- Thay đổi giá trị thông số của mỗi điểm ảnh
+- Hiển thị ra imageView
+
+
+2016-10-06: Relative Layout and Linear Layout
+Linear Layout: Cac widget duoc bo tri theo hang ngang hoac doc
+Relative Layout: Vi tri tuong doi giua 1 widget voi layout cha cua no hoac cac widget khac trong cung Layout
+
+HOMEWORK 3: Media player app
+Layout
+- Action bar
+- Content
+
+2016-10-16: Frame Layout and Table Layout
+Sắp xếp theo hiệu suất giảm dần:
+- FrameLayout (tốc độ xử lý cao nhất)
+- RelativeLayout
+- LinearLayout
+- TableLayout

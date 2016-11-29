@@ -1,0 +1,73 @@
+2016-11-06
+
+FRAGMENT in android:
+
+Ưu điểm của việc sd fragment:
+- Tận dụng được tối đa màn hình (phone screen + pad screen) (Thành 2 màn hình riêng biệt hoặc là chia đôi màn hình)
+
+Bản chất của việc sd fragment:
+- Thực chất là chia nhỏ màn hình của activity ra thành nhiều màn hình nhỏ (gọi là fragment)
+--> Khi chuyển sang một màn hình mới thì giữ nguyên một số fragment và thay đổi một số fragment (tùy theo điều khiển)
+
+Bình thường khi làm việc dịch chuyển giữa các activity thì ngày xưa người ta hay dùng Intent để chuyển giữa các activity.
+( Dùng bundle nếu muốn truyền, nhận nhiều thông tin)
+- Gọi: startActivity
+- Hủy: Finish
+--> Nhưng rất khó khăn trong việc chuyển đổi khi nhiều màn hỉnh (1->2->3->4 và chuyển từ 4 về 1,2 ..)
+--> Nên dùng fragment.
+
+Đối với fragment:
+- Không thể set ContentView thông qua hàm setContentView trong onCreate method.
+- Cần override hàm onCreateView và dùng inflate để quy định sẽ hiển thị layout nào.
+- Ở main activity sẽ tạo một fragment manager để quản lý tất cả các fragment trong cái activity của mình. Chính cái fragment manager 
+sẽ điều khiển hiển thị, thêm, bớt xóa các fragment nào.
+
+Fragment: Các bước làm việc và tiếp cận với fragement
+1 - Tính toán số fragement cần tạo:
+    - Bằng số màn hình con cần thay đổi trong giao diện
+2 - Tạo layout cho các màn hình. Chỉ thể hiện phần thay đổi thôi.
+3 - Tạo các lớp kế thừa cho fragement (mỗi màn hình fragement thì tạo một class)
+    + Class fragement được kế thừa từ class Fragment 
+    + Cài đặt hiển thị cho màn hình đó (Thêm, xóa, sửa cái layout nào - đã được tạo ở trên)
+    + Trong class này sẽ ghi đè các phương thức onCreate(), onCreateView(), onPause() --> set view layout cho màn hình
+4 - Chỉnh sửa MainActivity điều chỉnh xử lý chuyển hướng giữa các màn hình.
+
+
+2016-11-11: Học tiếp về fragment
+
+1. Thay thế cho việc tạo một containView và khi hiển thị lên thì mình dùng FragmenManager để add/replace view vào đấy --> bài tuần trước đã học
+--> có thể tạo layout là fragment và set atribute class của layout đấy tương ứng là class của fragment.
+
+2. Về vấn đề hiển thị trong màn hình ngang hay màn hình dọc:
+- Tạo thêm một folder tên là 
+	+ layout-land: Chứa các file hiển thị trong trường hợp là màn hình ngang
+	+ layout: Chứa các file hiển thị trong trường hợp là màn hình dọc
+	Chú ý: Tên file ở trong 2 folder phải là giống nhau.
+
+3. Từ API24 (Android 7) ta có thể gọi trực tiếp FragmenManager từ trong một fragment class bất kì. Cho phép người dùng điều khiển chuyển hướng
+giữa các màn hình xử lý trong từng class fragment luôn.
+Cách cũ: Tạo một thuộc tính mContext của từng class fragment và thông qua thuộc tính đấy truy xuất về hàm MainActivity và gọi được đến FragmenManager.
+
+4. Để có thể back lại được thì sau khi commit() thì sử dụng transaction.addToBackStack
+
+5. Có thể add animation thông qua thư viện animation android
+
+BTVN: 
+1, Viết app giống mp3.zing.vn
+2, Tìm hiểu thư viện navigation drawer
+
+Làm BTVN:
+- Logic thì sử dụng logic của app nghe nhạc đợt trước làm.
+- Về giao diện thì có 3 phần:
+	+ Top bar (Tên bài hát, ca sỹ)
+	+ Fragment (Thay đổi từ list bài hát, hình nền, lyrics)
+	+ Bottom bar (Chứa thông tin điều khiển media player)
+- Về fragment:
+	+ Tạo ra một pager để hiện thị content của các tab
+	+ Tạo các tab layout như sau (List, Cover, Image) - Tạo list trước và chỉ cần return nội dung từ list
+	+ Từ MainActivity: tạo các thuộc tính pager và tabLayout
+	
+QUESTION:
+1. Get all audio file --> Get từ fragement class thì OK. Ở main activity thì không được.
+2. Fragment (android) vs Fragment (v4) <---> getFragmentManager() vs getSupportFragmentManager() hay bị conflict type
+
