@@ -1,0 +1,35 @@
+Clone git branch from server:
+git clone -b v1.14-st ssh://devgitserver/var/www/git/firmware.git
+
+Switch to a branch:
+git checkout branch_name
+Switch to a new branch:
+git checkout -b branch_name
+
+Update a branch:
+git status --> check status, branch
+git remote show origin --> Diff with origin
+git fetch --> download newest data from origin
+git pull --> update branch
+
+Commit to git server:
+Discard change: git checkout *
+Check available branch: git branch -v -a | grep tsdv
+git branch
+git diff
+git log
+git status
+git commit -a -m "[Web] change display message for uploading file complete.( refs #2338 )"
+git push origin v1.14-tsdv02
+git config --global user.email "hoc.tranthai@toshiba-tsdv.com"
+git config --global user.name "hoctt"
+
+
+push = upload change from local repository to remote repository
+pull = download(get) change to local repository
+
+Như vậy tương ứng mỗi branch ở local thì sẽ có một branch ở remote (ở trên server)
+Bình thường khi làm việc người ta sẽ commit lên local (branch_name)
+Và đến khi hoàn thành xong chỉnh sửa, fix bugs... --> push lên remote branch (remote/branch_name)
+Để đồng bộ từ một branch ở remote về local --> Dùng pull
+Để load một branch từ remote và thay thể cho ở local --> fetch
