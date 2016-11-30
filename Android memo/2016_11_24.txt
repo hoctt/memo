@@ -16,6 +16,9 @@ jd-gui-1.4.0.jar
 
 5. Nguyên tắc lấy file java: Lấy file class.dex --> convert sang jar --> dùng tool để view jar file.
 
+NOTICE: Có một cách nữa có thể lấy toàn bộ source code từ file apk là dùng online tool.
+Upload file apk lên trang : http://www.javadecompilers.com/ và get results
+
 6.Cách lấy data từ các trang web về:
 6.1) Cách lấy link mà app dùng để load data về
 - Cài app
@@ -23,5 +26,9 @@ jd-gui-1.4.0.jar
 --> bắt được gói tin và xem đc nguồn data của nó.
 
 Hoặc có thể sử dụng phần mềm Charles để bắt từ máy tính.
+
+7. Cách đọc source code của một app (Khởi chạy --> Giao diện --> Lần lượt các xử lý logic từ màn hình chính)
+- Từ file manifest, tìm đến file java được khởi chạy đầu tiên (chứa MAIN và LAUNCHER)
+- Tìm đến file jave khởi chạy, 
 
 
