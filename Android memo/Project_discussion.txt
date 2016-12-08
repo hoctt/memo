@@ -1,0 +1,28 @@
+Project discussion 2016_12_08
+Members: HocTT+AnhT
+
+App: Học bằng lái xe B2
+1. Main UI + features: 
+	+ Use GridView
+		. Học lý thuyết (450 câu)
+		. Thi thử theo bộ đề (15 bộ đề * 30 câu)
+		. Mẹo học lý thuyết ()
+		. Các loại biển báo (sub-menu phân loại các biển báo)
+		. Mẹo thi sa hình (hướng dẫn đậu xe, vào chuồng ngang + dọc): 11 sub-menu
+			Tips + Videos (Refer app )
+			
+
+2. Technical problem:
+- Play videos: 
+	+ Get video ID (from youtube.com)
+	+ Click video link --> play video
+- DB management:
+	+ Text + images: Off-line (db or csv file)
+	+ Videos: Internet access required
+
+3. Project life-cycle
+	RA -> Coding -> UT -> ST
+
+4. Work assignment + schedule:
+	+ UI: 5 menu
+	+ Until Sunday (11/12): Complete screen design + Assign tasks for each member
