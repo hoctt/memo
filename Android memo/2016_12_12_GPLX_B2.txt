@@ -1,0 +1,7 @@
+TODO LIST + ACTION ITEMS:
+
+1. Thiết kế màn hình cho ứng dụng Học Bằng B2
+- Để GridView hiển thị đẹp hơn, bạn cần phải tùy biến các hiệu ứng, chẳng hạn khi đổi mầu nền của GridItem khi con trỏ di chuyển trên nó hoặc đổi mầu nền khi GridItem được chọn (Tham khảo GridView Selector)
+Refer: http://o7planning.org/vi/10473/huong-dan-su-dung-android-gridview
+	+ Tạo ra các file xml riêng cho các state khác nhau (normal, selected, pressed)
+- 
